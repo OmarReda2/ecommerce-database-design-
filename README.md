@@ -91,7 +91,7 @@ This project provides a production‑ready e‑commerce database schema with a f
     JOIN orders o ON od.order_id = o.id
     where order_date::date = '2025-11-01'
 
-> ### 5. Write an SQL query to generate a monthly report of the top-selling products in a given month.
+> ### 5. SQL query to generate a monthly report of the top-selling products in a given month.
 
 	SELECT p.id, p.name, SUM(od.quantity) AS most_sold
 	FROM order_details od
@@ -112,7 +112,7 @@ This project provides a production‑ready e‑commerce database schema with a f
 	  And o.order_date::date <= '2025-12-01'
 	HAVING total_orders > 500
 
-> ### 7. How we can apply a denormalization mechanism on customer and order entities
+> ### 7. Apply a denormalization mechanism on customer and order entities
 > 
 > #### a. create new table with combined columns and from customer and order tables,
 
@@ -136,13 +136,13 @@ This project provides a production‑ready e‑commerce database schema with a f
     FROM orders o
     JOIN customers c ON o.customer_id = c.id
 
-> ### 8. Write a SQL query to search for all products with the word "camera" in either 
+> ### 8. SQL query to search for all products with the word "camera" in either 
 
     SELECT *
     FROM products p
     WHERE p.name LIKE '%camera%' OR p.description LIKE '%camera%'
 
-> ### 9.  query to suggest popular products in the same category for the same author, excluding the Purchsed product from the recommendations
+> ### 9.  Query to suggest popular products in the same category for the same author, excluding the Purchsed product from the recommendations
 
     SELECT COUNT(od.product_id) as product_count, prod.name as product_name
     FROM order_details od
