@@ -21,7 +21,7 @@ This project provides a production‑ready e‑commerce database schema with a f
 
 
     -- Enable UUID generation
-    
+  ```sql  
     CREATE EXTENSION IF NOT EXISTS pgcrypto;
     
     -- Categories table
@@ -60,6 +60,7 @@ This project provides a production‑ready e‑commerce database schema with a f
         order_date TIMESTAMPTZ NOT NULL DEFAULT NOW(),
         total_amount NUMERIC(10,2) NOT NULL CHECK (total_amount > 0)
     );
+```sql
 
 > ### 3. ERD diagram of this sample schema
 
